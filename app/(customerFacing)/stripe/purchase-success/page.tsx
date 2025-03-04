@@ -11,7 +11,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string)
 export default async function SuccessPage({
   searchParams,
 }: {
-  searchParams: { payment_intent: string }
+  searchParams: Promise<{ payment_intent: string }>
 }) {
   const searchParamsAwait = await searchParams
   const paymentIntentId = await searchParamsAwait.payment_intent
