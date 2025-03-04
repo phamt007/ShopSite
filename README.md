@@ -1,4 +1,3 @@
-# ShopSite
 ## Project Information
 Creating a Ecommerce Website selling downloadable products to customers.
 
