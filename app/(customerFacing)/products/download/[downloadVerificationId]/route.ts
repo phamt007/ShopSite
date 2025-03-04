@@ -6,7 +6,7 @@ export async function GET(
   req: NextRequest,
   {
     params,
-  }: { params: { downloadVerificationId: string } }
+  }: { params: Promise<{ downloadVerificationId: string }> }
 ) {
 
   const { downloadVerificationId } = await params
