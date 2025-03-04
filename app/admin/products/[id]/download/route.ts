@@ -5,8 +5,9 @@ import fs from "fs/promises"
 
 export async function GET(
   req: NextRequest,
-  { params: { id } }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const { id } = await params
   const product = await db.product.findUnique({
     where: { id },
     select: { filePath: true, name: true },
